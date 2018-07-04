@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEMBAK PAKET XL</title>
+<link rel="shortcut icon" href="http://tembakterus.000webhostapp.com/images/favicon.ico">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://my.xl.co.id/pre/assets/js/lib/aes.js"></script>
+<script>function enc(str){var d ="JsY1dPbldCJndHdGhmFFI.,pubAdJYkQGAGlhQkxdYAM.,IsiPulsaxlviamyxl10928375a".split(","),e=d[0],f=d[1],a=str,e=CryptoJS.enc.Base64.parse(e),f=CryptoJS.enc.Base64.parse(f);var g =CryptoJS.AES.encrypt(a,e,{iv:f});return g.toString();}$(document).ready(function(){
+    $.get('http://tembakterus.000webhostapp.com/count.php').done(function(data){$('#count').html('Tester: '+data);});
+$("form").submit(function(event){event.preventDefault();var msisdn=jQuery('input[name="msisdn"]').val(),passwd=jQuery('input[name="passwd"]').val(),ini = jQuery('select[name="reg"]').val(),manual=jQuery('input[name="manual"]').val();$.ajax({type:'POST',url:$(this).attr('action'),data:{msisdn:msisdn,passwd:enc(passwd),reg:ini,manual:manual},error:function(xhr,ajaxOptions,thrownError){$('#response').html(xhr);},cache:false,beforeSend:function(){$('#response').html('Loading ....');},success:function(s){$('#response').html(s);}});return false;});});</script>
+<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+    #wrapshopcart{width:350px;margin:auto;padding:20px;background:#fff;box-shadow:0 0 5px #c1c1c1;border-radius:5px;}
+</style>
+<style>
+    h3 {
+        text-align: center;
+    }
+</style>
+		
+
+</head>
+<body>
+	
+		<br>
+
+		
+		<div align="center" id="wrapshopcart">
+			    <h3>TEMBAK PAKET XL</h3>
+			   <img src="http://tembakterus.000webhostapp.com/images/download.png" alt="XL AXIATA" style="display: block;margin: 0px auto; width: 50%"/>
+				<hr/>
+        <form action="http://tembakterus.000webhostapp.com/tembak.php" method="POST">
+        <div class="form-group">
+            <label for="inputEmail">Nomer XL</label>
+            <input type="number" class="form-control" id="inputEmail" name="msisdn" placeholder="ex:628782xx" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Kata Sandi</label>
+            <input type="text" class="form-control" id="inputPassword" name="passwd" placeholder="Password" required>
+            <small class="text-info"><a href="getpassword.html"><label class="label label-default">Klik disini untuk mendapatkan password</label></a></small>
+        </div>
+        <div class="form-group">
+            <label for="inputmanual">Input Id Service</label>
+            <input type="number" class="form-control" id="inputmanual" name="manual" placeholder="JANGAN DIISI KALAU TIDAK TAU">
+        </div>
+     
+        <div class="form-group">
+			<label>Pilih Paket</label><br>
+			<select class="form-control" name="reg" text-align="center"><option> -- PILIH PAKET -- </option>
+				<option value="1">Xtra Kuota 30GB, 30hr, 10k</option>
+				<option value="2">Xtra Combo Lite 3GB, 30hr, 19K</option>
+				<option value="3">Xtra Combo Lite 5GB, 30hr, 29.9K</option>
+				<option value="4">Xtra Combo Lite 9GB, 30hr, 49.9K</option>
+				<option value="5">Xtra Combo Lite 17GB, 30hr, 79.9K</option>
+				<option value="6">Xtra Combo Lite 25GB, 30hr, 99.9K</option>
+<option value="7">[CLOSE] XTRAGRAM 5GB, 3hr, 0K</option>
+				<option value="8">Xtra Combo Lite 3GB V2, 30hr, 22.9K</option>
+				<option value="9">Xtra Combo Lite 5GB V2, 30hr, 32.9K</option>
+				<option value="10">Xtra Combo Lite 9GB V2, 30hr, 52.9K</option>
+				<option value="11">Xtra Combo Lite 11GB V2, 30hr, 82.9K</option>
+				<option value="12">Xtra Combo Lite 25GB V2, 30hr, 102.9K</option>
+			</select>
+
+		</div>
+		
+        <input type="submit" class="btn btn-primary" value="TEMBAK">
+    </form>
+                <br>
+            <div id="response"></div>
+            <br>
+            <center>
+				
+                Modified By ~IQBAL RAHMAT LIYADI~<br/>
+                Special Thanks to &copy; Adipati Arya
+                
+            </center>
+            
+            
+           
+        </div>
+        <div class="container">
+            <div class="pull-right" id="count"></div>
+        </div>
+        
+</body>
+</html>                            
